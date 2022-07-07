@@ -6,7 +6,7 @@ function App() {
   const [workouts, setWorkouts] = useState([]);
 
   const submissionHandler = (workout) => {
-    setWorkouts((preWorkouts) => [...preWorkouts, workout]);
+    setWorkouts((prevWorkouts) => [...prevWorkouts, workout]);
   };
   console.log(workouts);
 
