@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import WorkoutForm from "./components/WorkoutForm";
+import "./App.css";
 
 function App() {
+  const [workouts, setWorkouts] = useState([]);
+
+  const submissionHandler = (workout) => {
+    setWorkouts((preWorkouts) => [...preWorkouts, workout]);
+  };
+  console.log(workouts);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>We begin</h1>
+      <WorkoutForm submissionHandler={submissionHandler} />
     </div>
   );
 }
